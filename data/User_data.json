@@ -1,0 +1,155 @@
+{
+    "1000": {
+        "username": "Admin",
+        "password": "bridge8",
+        "user ID": 1000,
+        "cart": {},
+        "order history": [
+            {
+                "1000": [
+                    "product name: 65% Mechanical Keyboard",
+                    "purchased: on 29/06/25 at 01:44",
+                    "cost: 50"
+                ]
+            }
+        ],
+        "balance": 770
+    },
+    "1001": {
+        "username": "test",
+        "password": "pass123",
+        "user ID": 1001,
+        "cart": {},
+        "order history": [
+            {
+                "1001": [
+                    "product name: Wireless Mouse",
+                    "purchased: on 29/06/25 at 01:49",
+                    "cost: 30"
+                ]
+            }
+        ],
+        "balance": 0
+    },
+    "1002": {
+        "username": "rabbit5",
+        "password": "carrot",
+        "user ID": 1002,
+        "cart": {},
+        "order history": [
+            {
+                "1001": [
+                    "product name: Wireless Mouse",
+                    "purchased: on 29/06/25 at 22:23",
+                    "cost: 30"
+                ]
+            },
+            {
+                "1003": [
+                    "product name: USB-C Hub",
+                    "purchased: on 30/06/25 at 21:23",
+                    "cost: 45"
+                ]
+            },
+            {
+                "1001": [
+                    "product name: Wireless Mouse",
+                    "purchased: on 30/06/25 at 22:14",
+                    "cost: 30"
+                ]
+            },
+            {
+                "1001": [
+                    "product name: Wireless Mouse",
+                    "purchased: on 30/06/25 at 22:14",
+                    "cost: 30"
+                ]
+            },
+            {
+                "1001": [
+                    "product name: Wireless Mouse",
+                    "purchased: on 30/06/25 at 22:14",
+                    "cost: 30"
+                ]
+            },
+            {
+                "1001": [
+                    "product name: Wireless Mouse",
+                    "purchased: on 30/06/25 at 22:14",
+                    "cost: 30"
+                ]
+            },
+            {
+                "1002": [
+                    "product name: 27-inch 4K Monitor",
+                    "purchased: on 30/06/25 at 22:14",
+                    "cost: 300"
+                ]
+            },
+            {
+                "1002": [
+                    "product name: 27-inch 4K Monitor",
+                    "purchased: on 30/06/25 at 22:14",
+                    "cost: 300"
+                ]
+            },
+            {
+                "1002": [
+                    "product name: 27-inch 4K Monitor",
+                    "purchased: on 30/06/25 at 22:14",
+                    "cost: 300"
+                ]
+            },
+            {
+                "1002": [
+                    "product name: 27-inch 4K Monitor",
+                    "purchased: on 30/06/25 at 22:14",
+                    "cost: 300"
+                ]
+            },
+            {
+                "1006": [
+                    "product name: Ergonomic Office Chair",
+                    "purchased: on 30/06/25 at 22:14",
+                    "cost: 150"
+                ]
+            },
+            {
+                "1006": [
+                    "product name: Ergonomic Office Chair",
+                    "purchased: on 30/06/25 at 22:14",
+                    "cost: 150"
+                ]
+            },
+            {
+                "1006": [
+                    "product name: Ergonomic Office Chair",
+                    "purchased: on 30/06/25 at 22:14",
+                    "cost: 150"
+                ]
+            },
+            {
+                "1006": [
+                    "product name: Ergonomic Office Chair",
+                    "purchased: on 30/06/25 at 22:14",
+                    "cost: 150"
+                ]
+            },
+            {
+                "1001": [
+                    "product name: Wireless Mouse",
+                    "purchased: on 01/07/25 at 23:17",
+                    "cost: 30"
+                ]
+            },
+            {
+                "1001": [
+                    "product name: Wireless Mouse",
+                    "purchased: on 01/07/25 at 23:17",
+                    "cost: 30"
+                ]
+            }
+        ],
+        "balance": 20
+    }
+}
