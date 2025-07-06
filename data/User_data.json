@@ -151,5 +151,13 @@
             }
         ],
         "balance": 20
+    },
+    "1003": {
+        "username": "coolguy123",
+        "password": "$2b$12$./MDc5Uf8ibVf8QkH2zVnOgqa/MtA532CvCIpg57x0IjnCsmeKMXG",
+        "user ID": 1003,
+        "cart": {},
+        "order history": [],
+        "balance": 0
     }
 }
