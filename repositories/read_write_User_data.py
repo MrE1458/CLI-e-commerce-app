@@ -1,6 +1,8 @@
 from utils.path_utils import get_data_path
+from utils import password_security_utils
 import json
 from repositories import read_write_products
+import bcrypt
 
 def read_User_data():
     user_data_path = get_data_path("User_data.json")
@@ -22,9 +24,10 @@ def add_new_user(user_id, username, password):
     user_data_path = get_data_path("User_data.json")
     data = read_User_data()
 
+    hashed_password = password_security_utils.hash_password(password)
     data[str(user_id)] = {
         "username": username,
-        "password": password,
+        "password": hashed_password,
         "user ID": user_id,
         "cart": {},
         "order history": [],
@@ -32,7 +35,7 @@ def add_new_user(user_id, username, password):
     }
     with open(user_data_path, "w") as user_info_file:
         json.dump(data, user_info_file, indent=4)
-    account = Account(user_id=str(user_id), username=username, password=password, cart={}, order_history=[{}], balance=0)
+    account = Account(user_id=str(user_id), username=username, password=hashed_password, cart={}, order_history=[], balance=0)
     return account
 
 def is_unique_user(username):
@@ -66,7 +69,7 @@ def remove_from_cart(user_id, product_id, quantity_to_remove):
     if quantity_to_remove < current_quantity:
         user["cart"][str(product_id)] -= quantity_to_remove
         dump_to_file(data)
-        return f"Removed {quantity_to_remove}. Remaining quantity: {user["cart"][str(product_id)]}"
+        return f"Removed {quantity_to_remove}. Remaining quantity: {user['cart'][str(product_id)]}"
     elif quantity_to_remove == current_quantity:
         del user["cart"][str(product_id)]
         dump_to_file(data)
@@ -158,3 +161,17 @@ def empty_cart(user_id):
         remove_from_cart(user_id, product_id, quantity)
     return "success"
 
+def get_password(user_id):
+    '''
+    returns the password as a string not a byte so it needs to be re-encoded
+    '''
+    data = read_user(user_id)
+    password = data["password"]
+    return password
+
+
+
+#if __name__ == "__main__":
+#    password = get_password(1003)
+#    entered_pass = "PASSWORD"
+#    print(compare_password(entered_pass, password))

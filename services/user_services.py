@@ -1,10 +1,8 @@
-from repositories.read_write_User_data import add_new_user
-from utils.path_utils import get_data_path
+from utils import password_security_utils
 from repositories.read_write_userID import increment_userID
 import repositories.read_write_User_data
 from models.Account import Account
-import json
-import os
+
 
 def generate_userID():
     return increment_userID(1)
@@ -25,9 +23,10 @@ def login(username, password):
     data = repositories.read_write_User_data.read_User_data()
     for user_id, account in data.items():
         if username == account["username"]:
-            if password == account["password"]:
+            if password_security_utils.compare_password(password, account["password"]):
                 return_account = Account(user_id, account["username"], account["password"], account["cart"], account["order history"], account["balance"])
                 return return_account
             else:
                 return "wrong password"
     return "wrong username"
+
