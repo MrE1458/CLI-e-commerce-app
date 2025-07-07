@@ -47,5 +47,19 @@
         "cost": 150,
         "weight": 15000,
         "product_id": 1006
+    },
+    "1007": {
+        "name": "chair",
+        "description": "cool chair you can sit on",
+        "cost": 15,
+        "weight": 5000,
+        "product_id": 1007
+    },
+    "1008": {
+        "name": "cool chair #2",
+        "description": "so comfy bro",
+        "cost": 20,
+        "weight": 7000,
+        "product_id": 1008
     }
 }

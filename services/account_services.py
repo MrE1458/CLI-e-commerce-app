@@ -1,6 +1,5 @@
 import repositories.read_write_products
 import repositories.read_write_User_data
-from repositories.read_write_User_data import take_away_from_balance
 
 
 def return_product_info():
