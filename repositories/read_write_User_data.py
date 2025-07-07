@@ -1,4 +1,5 @@
 from utils.path_utils import get_data_path
+from utils import password_security_utils
 import json
 from repositories import read_write_products
 import bcrypt
@@ -23,7 +24,7 @@ def add_new_user(user_id, username, password):
     user_data_path = get_data_path("User_data.json")
     data = read_User_data()
 
-    hashed_password = hash_password(password)
+    hashed_password = password_security_utils.hash_password(password)
     data[str(user_id)] = {
         "username": username,
         "password": hashed_password,
@@ -160,21 +161,13 @@ def empty_cart(user_id):
         remove_from_cart(user_id, product_id, quantity)
     return "success"
 
-def hash_password(original_password):
-    salt = bcrypt.gensalt()
-    hashed_password = bcrypt.hashpw(original_password.encode(), salt)
-    return hashed_password.decode() #--- decode to store in json database
-
 def get_password(user_id):
     '''
-    returns a byte instead of a string
+    returns the password as a string not a byte so it needs to be re-encoded
     '''
     data = read_user(user_id)
     password = data["password"]
     return password
-
-def compare_password(entered_password, correct_password):
-    return bcrypt.checkpw(entered_password.encode(), correct_password.encode())
 
 
 
