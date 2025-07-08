@@ -171,6 +171,11 @@ def get_password(user_id):
 
 
 
+            
+
+
+#print(add_to_cart(1005, 1001))
+#print(add_to_cart(1005, 1000))
 #if __name__ == "__main__":
 #    password = get_password(1003)
 #    entered_pass = "PASSWORD"

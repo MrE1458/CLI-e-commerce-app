@@ -9,8 +9,8 @@ class Admin(Account):
     def add_product(self, name, description, cost, weight):
         return admin_services.add_product(name, description, cost, weight)
 
-    def remove_product(self):
-        pass
+    def remove_product(self, product_id):
+        return admin_services.delete_product(product_id)
 
     def edit_product(self):
         pass
@@ -22,4 +22,5 @@ class Admin(Account):
         pass
 
 #admin1 = Admin(1000, "Admin", "bridge8", {}, [], 1970)
+#print(admin1.remove_product(1005))
 #print(admin1.add_product("cool chair #2", "so comfy bro", 20, 7000))

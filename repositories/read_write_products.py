@@ -34,3 +34,35 @@ def add_product(name, description, cost, weight):
     dump_to_file(data)
     return "Success"
 
+def read_User_data():
+    user_data_path = get_data_path("User_data.json")
+    with open(user_data_path, "r") as user_info_file:
+        data = json.load(user_info_file)
+        return data
+    
+def dump_to_user_file(data):
+    user_data_path = get_data_path("User_data.json")
+    with open(user_data_path, "w") as file:
+        json.dump(data, file, indent=4)
+
+def delete_product_from_every_cart(product_id):
+    user_data = read_User_data()
+
+    for user_id in user_data:
+        cart = user_data[user_id]["cart"]
+        if str(product_id) in cart:
+            del cart[str(product_id)]
+
+    dump_to_user_file(user_data)
+    return f"successfully deleted {product_id} from all users carts"
+
+def delete_product_from_products(product_id):
+    data = load_products_data()
+    data.pop(str(product_id), None)
+    dump_to_file(data)
+
+def delete_product(product_id):
+    delete_product_from_every_cart(product_id)
+    delete_product_from_products(product_id)
+    return "success"
+
