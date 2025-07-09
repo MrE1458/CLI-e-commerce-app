@@ -3,6 +3,7 @@
         "username": "Admin",
         "password": "$2b$12$E5ByabrHWI9HHx9WUBdy/.M02AJErgvGdcNL5/pLo.5eDimS8tt52",
         "user ID": 1000,
+        "admin": true,
         "cart": {},
         "order history": [
             {

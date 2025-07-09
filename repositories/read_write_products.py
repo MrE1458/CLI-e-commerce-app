@@ -66,3 +66,12 @@ def delete_product(product_id):
     delete_product_from_products(product_id)
     return "success"
 
+def edit_product(product_id, name, description, cost, weight):
+    products = load_products_data()
+    product = products[str(product_id)]
+    product["name"] = name
+    product["description"] = description
+    product["cost"] = cost
+    product["weight"] = weight
+    dump_to_file(products)
+    return "success"
