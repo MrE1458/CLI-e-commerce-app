@@ -171,7 +171,3 @@ def get_password(user_id):
 
 
 
-#if __name__ == "__main__":
-#    password = get_password(1003)
-#    entered_pass = "PASSWORD"
-#    print(compare_password(entered_pass, password))
