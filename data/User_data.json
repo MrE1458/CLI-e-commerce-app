@@ -47,9 +47,23 @@
                     "purchased: on 10/07/25 at 02:03",
                     "cost: 50"
                 ]
+            },
+            {
+                "1002": [
+                    "product name: 27-inch 4K Monitor",
+                    "purchased: on 10/07/25 at 11:50",
+                    "cost: 300"
+                ]
+            },
+            {
+                "1003": [
+                    "product name: USB-C Hub",
+                    "purchased: on 10/07/25 at 11:50",
+                    "cost: 45"
+                ]
             }
         ],
-        "balance": 1660.0
+        "balance": 1315.0
     },
     "1001": {
         "username": "coolguy123",

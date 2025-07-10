@@ -11,8 +11,8 @@ def return_product_info():
         to_return += "\n"
     return to_return
 
-def add_to_cart(product_id, user_id):
-    return repositories.read_write_User_data.add_to_cart(product_id, user_id)
+def add_to_cart(product_id, user_id, amount_to_add):
+    return repositories.read_write_User_data.add_to_cart(product_id, user_id, amount_to_add)
 
 def get_product_name(product_id):
     name = repositories.read_write_products.get_product_name(product_id)

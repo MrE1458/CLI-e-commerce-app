@@ -5,12 +5,16 @@ from models.Admin import Admin
 
 
 def first_menu():
+    def get_username_and_password():
+        username = input("Please Enter your username: ")
+        password = input("please Enter your password: ")
+        return username, password
+    
     login_or_signup = input("Hello this is the User Gate you will have to login or signup enter 1 or 2\n[1] login\n[2] signup\n")
     current_user = UserGate()
 
     if login_or_signup == "1":
-        username = input("Please Enter your username: ")
-        password = input("please Enter your password: ")
+        username, password = get_username_and_password()
         current_user = current_user.login(username, password)
         if isinstance(current_user, Account):
             return current_user
@@ -19,8 +23,7 @@ def first_menu():
             return False
         
     elif login_or_signup == "2":
-        username = input("Please Enter your username: ")
-        password = input("please Enter your password: ")
+        username, password = get_username_and_password()
         current_user = current_user.signup(username, password)
         if isinstance(current_user, Account):
             return current_user
@@ -41,7 +44,8 @@ def cart_menu(account):
         cart_choice = input("Would you like to do:\n[1] remove an item from your cart\n[2] buy your cart\n[3] buy a specific product\n[4] nothing I'm good\n")
         if cart_choice == "1":
             product_id = input("Enter the product id of the item you'd like to remove from your cart: ")
-            return account.remove_from_cart(product_id)
+            quantity = input("Enter the number of this item you would like to remove from your cart: ")
+            return account.remove_from_cart(product_id, quantity)
         elif cart_choice == "2":
             print(account.buy_cart())
             return f"current balance: {account.account_balance}"
@@ -69,9 +73,16 @@ def balance_menu(account):
 def normal_account_browse_products(account):
     print(account.browse_products())
     browsing_products_choice = input("would you like to do:\n[1] add a product to your cart\n[2] buy a product\n[3] nothing I'm good")
+
     if browsing_products_choice == "1":
-        product_id = input("Enter the product ID of the product you wanna add to your cart: ")
-        return account.add_to_cart(product_id)
+            product_id = input("Enter the product ID of the product you wanna add to your cart: ")
+            amount_to_add = input("Enter the amount you'd like to add: ")
+
+            if not amount_to_add.isdigit() or int(amount_to_add) <= 0:
+                return "Please enter a valid positive number for quantity."
+            
+            return account.add_to_cart(product_id, int(amount_to_add))
+    
     elif browsing_products_choice == "2":
         product_id = input("Enter the product ID of the product you wanna buy: ")
         return account.buy(product_id)
@@ -168,7 +179,7 @@ def main_menu(account):
         return
     
     elif choice == "5":
-        print(account.view_order_history())
+        print(account.view_order_history)
         return
     
     # admin stuff

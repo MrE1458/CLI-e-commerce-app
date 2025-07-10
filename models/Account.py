@@ -24,8 +24,8 @@ class Account:
     def view_cart(self):
         return services.account_services.return_formatted_cart(self.user_id)
 
-    def add_to_cart(self, product_to_add_id):
-        return services.account_services.add_to_cart(product_id=product_to_add_id, user_id=self.user_id)
+    def add_to_cart(self, product_to_add_id, amount_to_add):
+        return services.account_services.add_to_cart(product_id=product_to_add_id, user_id=self.user_id, amount_to_add=amount_to_add)
 
     def remove_from_cart(self, product_id, quantity_to_remove):
         return services.account_services.remove_from_cart(self.user_id, product_id, quantity_to_remove)

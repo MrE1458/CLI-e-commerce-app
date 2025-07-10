@@ -46,17 +46,17 @@ def is_unique_user(username):
             return False
     return True
 
-def add_to_cart(product_id, user_id):
+def add_to_cart(product_id, user_id, amount_to_add):
     data = read_User_data()
     user = data[str(user_id)]
     try:
         if str(product_id) in user["cart"]:
-            user["cart"][str(product_id)] += 1
+            user["cart"][str(product_id)] += amount_to_add
         else:
-            user["cart"][str(product_id)] = 1
+            user["cart"][str(product_id)] = amount_to_add
 
         dump_to_file(data)
-        return "Product added to cart successfully!"
+        return f"{amount_to_add} instances of Product added to cart successfully!"
     except KeyError:
         return f"The product ID {product_id} isn't valid" # user_id can't be invalid as a logged in Account always has an auto-passed valid user_id
 
@@ -66,6 +66,8 @@ def remove_from_cart(user_id, product_id, quantity_to_remove):
         user = data[str(user_id)]
         current_quantity = user["cart"][str(product_id)]
         
+        if not quantity_to_remove.isdigit():
+            return "Please enter a valid quantity to remove"
         if quantity_to_remove < current_quantity:
             user["cart"][str(product_id)] -= quantity_to_remove
             dump_to_file(data)
