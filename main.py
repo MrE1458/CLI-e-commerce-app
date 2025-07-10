@@ -116,7 +116,8 @@ def admin_browse_products(account):
         browsing_products_choice = input("would you like to do:\n[1] add a product to your cart\n[2] buy a product\n[3] delete a product globally\n[4] Edit a product\n[5] add a product globally\n[6] nothing I'm good\n")
         if browsing_products_choice == "1":
             product_id = input("Enter the product ID of the product you wanna add to your cart: ")
-            return account.add_to_cart(product_id)
+            amount_to_add = input("Enter the amount you'd like to add: ")
+            return account.add_to_cart(product_id, amount_to_add)
         elif browsing_products_choice == "2":
             product_id = input("Enter the product ID of the product you wanna buy: ")
             return account.buy(product_id)

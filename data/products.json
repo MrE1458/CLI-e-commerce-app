@@ -47,5 +47,12 @@
         "cost": 150,
         "weight": 15000,
         "product_id": 1006
+    },
+    "1008": {
+        "name": "water-gun",
+        "description": "this cool plastic watergun is fun for the whole family!",
+        "cost": 10.0,
+        "weight": 500.0,
+        "product_id": 1008
     }
 }

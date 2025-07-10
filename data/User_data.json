@@ -80,5 +80,17 @@
             }
         ],
         "balance": 970
+    },
+    "1002": {
+        "username": "cool admin",
+        "password": "$2b$12$0ipyaVhcO7g31IhzQOZwKuKvgbtz7vNctF/9H7ar7O08IrQ7c/jd6",
+        "user ID": 1008,
+        "admin": true,
+        "cart": {
+            "1002": "2",
+            "1000": "2"
+        },
+        "order history": [],
+        "balance": 0
     }
 }

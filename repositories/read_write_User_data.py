@@ -56,7 +56,7 @@ def add_to_cart(product_id, user_id, amount_to_add):
             user["cart"][str(product_id)] = amount_to_add
 
         dump_to_file(data)
-        return f"{amount_to_add} instances of Product added to cart successfully!"
+        return f"{amount_to_add} of product {product_id} added to cart successfully!"
     except KeyError:
         return f"The product ID {product_id} isn't valid" # user_id can't be invalid as a logged in Account always has an auto-passed valid user_id
 
