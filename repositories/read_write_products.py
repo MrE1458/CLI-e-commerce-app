@@ -32,7 +32,7 @@ def add_product(name, description, cost, weight):
         "product_id": product_id
     }
     dump_to_file(data)
-    return "Success"
+    return f"Added product {name}"
 
 def read_User_data():
     user_data_path = get_data_path("User_data.json")
@@ -58,13 +58,16 @@ def delete_product_from_every_cart(product_id):
 
 def delete_product_from_products(product_id):
     data = load_products_data()
-    data.pop(str(product_id), None)
-    dump_to_file(data)
+    if str(product_id) in data:
+        del data[str(product_id)]
+        dump_to_file(data)
+        return True
+    return False
 
 def delete_product(product_id):
     delete_product_from_every_cart(product_id)
-    delete_product_from_products(product_id)
-    return "success"
+    deleted_from_products = delete_product_from_products(product_id)
+    return f"the product ID {product_id} is invalid" if not deleted_from_products else f"successfully deleted {product_id}"
 
 def edit_product(product_id, name, description, cost, weight):
     products = load_products_data()

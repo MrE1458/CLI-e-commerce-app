@@ -12,7 +12,7 @@ def return_product_info():
     return to_return
 
 def add_to_cart(product_id, user_id):
-    repositories.read_write_User_data.add_to_cart(product_id, user_id)
+    return repositories.read_write_User_data.add_to_cart(product_id, user_id)
 
 def get_product_name(product_id):
     name = repositories.read_write_products.get_product_name(product_id)
@@ -80,7 +80,7 @@ def buy_cart(user_id):
             for i in range(quantity):
                 repositories.read_write_User_data.add_to_order_history(user_id, product_id)
         empty_cart(user_id)
-        return "success"
+        return "bought cart"
 
     else:
         return "not enough funds available"
