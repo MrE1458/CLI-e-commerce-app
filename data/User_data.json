@@ -12,9 +12,44 @@
                     "purchased: on 07/07/25 at 17:49",
                     "cost: 30"
                 ]
+            },
+            {
+                "1006": [
+                    "product name: Ergonomic Office Chair",
+                    "purchased: on 10/07/25 at 01:47",
+                    "cost: 150"
+                ]
+            },
+            {
+                "1005": [
+                    "product name: Mechanical Gaming Keyboard",
+                    "purchased: on 10/07/25 at 01:58",
+                    "cost: 80"
+                ]
+            },
+            {
+                "1005": [
+                    "product name: Mechanical Gaming Keyboard",
+                    "purchased: on 10/07/25 at 01:58",
+                    "cost: 80"
+                ]
+            },
+            {
+                "1000": [
+                    "product name: 65% Mechanical Keyboard",
+                    "purchased: on 10/07/25 at 02:03",
+                    "cost: 50"
+                ]
+            },
+            {
+                "1000": [
+                    "product name: 65% Mechanical Keyboard",
+                    "purchased: on 10/07/25 at 02:03",
+                    "cost: 50"
+                ]
             }
         ],
-        "balance": 1970
+        "balance": 1660.0
     },
     "1001": {
         "username": "coolguy123",
